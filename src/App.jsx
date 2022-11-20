@@ -28,19 +28,19 @@ function App() {
         <div className="camera"></div>
         <div className="display">
           <div className="artboard artboard-demo phone-1 px-5">
+          <h2 className="text-xl font-semibold my-4">{words}</h2>
             <input
               onChange={handleNumberToWord}
               type="text"
               placeholder="Please input a Number"
-              className="input input-bordered input-success w-full max-w-xs px-auto"
+              className="input input-bordered input-info w-full max-w-xs px-auto"
             />
-            <h2 className="text-xl font-semibold mt-4">{words}</h2>
             <div className="form-control">
             <label className="cursor-pointer label">
               <span className="label-text text-xl mx-2">Bangla?</span>
               <input onClick={handleLanguage}
                 type="checkbox"
-                className="checkbox checkbox-success"
+                className="checkbox checkbox-info"
               />
             </label>
           </div>
