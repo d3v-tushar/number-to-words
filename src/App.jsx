@@ -9,7 +9,10 @@ function App() {
   useTitle("Number To Words");
   const convert = new Converter(lang);
   const handleNumberToWord = (e) => {
-    const number = e.target.value;
+    let number = e.target.value;
+    if(number.length < 1){
+      setWords('No Integer Found!')
+    }
     setWords(convert.toWords(number, { comma: true }));
   };
 
@@ -32,7 +35,7 @@ function App() {
             <input
               onChange={handleNumberToWord}
               type="text"
-              placeholder="Please input a Number"
+              placeholder="Please Input Number To Convert"
               className="input input-bordered input-info w-full max-w-xs px-auto"
             />
             <div className="form-control">
@@ -40,12 +43,10 @@ function App() {
               <span className="label-text text-xl mx-2">Bangla?</span>
               <input onClick={handleLanguage}
                 type="checkbox"
-                className="checkbox checkbox-info"
-              />
+                className="checkbox checkbox-info"/>
             </label>
           </div>
           </div>
-          
         </div>
       </div>
     </div>
